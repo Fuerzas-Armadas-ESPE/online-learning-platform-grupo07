@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import   { useEffect, useState } from "react";
 import { getCoursesFromFirestore } from "../api/coursesApi"; // Importa la función para obtener los cursos desde Firestore
 
 const Courses = () => {
@@ -6,16 +6,24 @@ const Courses = () => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const coursesData = await getCoursesFromFirestore(); // Obtiene los cursos desde Firestore
-      // Convierte la marca de tiempo "create" a formato de fecha
-      const formattedCourses = coursesData.map((course) => ({
-        ...course,
-        create: course.create.toDate(),
-      }));
-      setCourses(formattedCourses); // Actualiza el estado con los cursos obtenidos
+      try {
+        const coursesData = await getCoursesFromFirestore();
+        console.log('Courses data:', coursesData); // Verifica los datos obtenidos
+        const formattedCourses = coursesData.map((course) => ({
+          id: course.id,
+          title: course.title,
+          description: course.description,
+          instructor: course.instructor,
+          create: course.fecha, // Renombrado de fecha a create para mantener la consistencia
+          url: course.url,
+        }));
+        setCourses(formattedCourses);
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+      }
     };
 
-    fetchCourses(); // Ejecuta la función para obtener los cursos al montar el componente
+    fetchCourses();
   }, []);
 
   return (

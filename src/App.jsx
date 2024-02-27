@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Fotter";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
+import CourseDetailsPage from "./pages/CourseDetailsPage"; // Importa la nueva página
 
 const App = () => {
   return (
@@ -11,8 +12,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Courses />} />
-          {/* Agrega más rutas aquí según sea necesario */}
+          <Route path="/courses" element={<Courses />} /> 
+          <Route path="/course/:id" element={<CourseDetailsPage />} />
         </Routes>
         <Footer />
       </div>
