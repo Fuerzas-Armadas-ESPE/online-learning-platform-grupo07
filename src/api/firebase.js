@@ -1,10 +1,13 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyAuWrxaTHpGG3UBZLCjiVvaz0tLW_9TCUs",
-  authDomain: "online-learning-platform-51911.firebaseapp.com",
-  projectId: "online-learning-platform-51911",
-  storageBucket: "online-learning-platform-51911.appspot.com",
-  messagingSenderId: "556458251413",
-  appId: "1:556458251413:web:cba2fc62cf65a9b303b79c "
+  apiKey: "AIzaSyA_EbyMT8NFB574zxe8Ne9wEDLYmxbXB40",
+  authDomain: "grupo07-a387f.firebaseapp.com",
+  databaseURL: "https://grupo07-a387f-default-rtdb.firebaseio.com",
+  projectId: "grupo07-a387f",
+  storageBucket: "grupo07-a387f.appspot.com",
+  messagingSenderId: "609677272550",
+  appId: "1:609677272550:web:9429cd0963c73169e4a227"
 };
 
 export default firebaseConfig;
+
+
